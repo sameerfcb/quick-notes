@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <main class="shell">
+    <section class="header-card">
+      <p class="eyebrow">Quick Notes MVP</p>
+      <h1>Write fast. Find later.</h1>
+      <p class="subtitle">A lightweight notes board powered by FastAPI and SQLite.</p>
+      <button id="theme-toggle" class="theme-toggle" type="button">Toggle Dark Mode</button>
+    </section>
+
+    <section class="composer card">
+      <label for="note-input">Your note</label>
+      <textarea id="note-input" rows="5" placeholder="Capture thoughts, todos, and ideas..."></textarea>
+      <div class="composer-footer">
+        <span id="char-count">0 characters</span>
+        <button id="save-btn" type="button">Save Note</button>
+      </div>
+    </section>
+
+    <section class="notes-panel card">
+      <div class="notes-toolbar">
+        <h2>All Notes</h2>
+        <input id="search-input" type="search" placeholder="Search notes..." />
+      </div>
+      <p id="empty-state" class="empty-state">No notes yet. Save your first one.</p>
+      <div id="notes-list" class="notes-list"></div>
+    </section>
+  </main>
+
+  <template id="note-template">
+    <article class="note-item">
+      <p class="note-content"></p>
+      <div class="note-meta">
+        <span class="note-created"></span>
+        <span class="note-updated"></span>
+      </div>
+      <div class="note-actions">
+        <button class="copy-btn" type="button">Copy</button>
+        <button class="edit-btn" type="button">Edit</button>
+        <button class="delete-btn" type="button">Delete</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
